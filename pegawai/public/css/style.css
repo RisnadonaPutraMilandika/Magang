@@ -1,0 +1,77 @@
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    margin-bottom: 70px;
+    font-size: very small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+
+}
+
+#footer{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    background-color: #00ff00;
+    font-size: 0.9em;
+    color: blue;
+    height: 50px;
+    text-align: center;
+    padding-top: 20px;
+    
+}
+
+.box-button{
+    display: inline-block;
+    
+}
+
+.table-nav, .tombol-nav{
+    display: block;
+    clear: both;
+    float: left;
+    width: 100%;
+    color: black;
+}
+
+.tombol-nav{
+    margin-top: 10px;
+    
+}
+
+.table-nav{
+    
+    color: black;
+}
+
+.jumlah-data, .paging{
+    float: 50%;
+    height: 60px;
+    display: block;
+}
+
+.jumlah-data{
+    float: left;
+    padding-top: 15px;
+}
+
+.paging{
+    float: right;
+    text-align: right;
+}
+
+.paging ul.pager, .paging ul.pagination{
+    text-align: right;
+}
+
+.ul.pagination, ul.pager{
+    margin-top: 8px;
+}
+
+#pencarian{
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
