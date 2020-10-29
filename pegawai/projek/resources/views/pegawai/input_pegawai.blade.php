@@ -34,8 +34,3 @@
         </div>
         </div>
     @stop
-    @section('footer')
-    <div id="footer">
-        <p>&copy; Polines 2020 </p>
-    </div>
-@stop

@@ -2,16 +2,18 @@
 
 @section('main')
     <div id="pegawai">
+    <center>
     <h2>Data Pegawai</h2>
+    </center>
         <table class="table">
         <tr>
         @if($pegawai->foto)
-                                <img src=" {{ asset('/public/fotoupload/'.$pegawai->foto) }}">    
+                                <img src=" {{ asset('/public/fotoupload/'.$pegawai->foto) }}"width="250px" height="250px">    
                         @else 
                                 @if($pegawai->jenis_kelamin == 'L')
-                                        <img src="{{ asset('/public/fotoupload/male.png') }}">
+                                        <img src="{{ asset('/public/fotoupload/male.png') }}"width="250px" height="250px">
                                 @else
-                                        <img src="{{ asset('/public/fotoupload/female.png') }}">
+                                        <img src="{{ asset('/public/fotoupload/female.png') }}"width="250px" height="250px">
                                 @endif
                                 @endif
                                 </tr>
@@ -55,8 +57,3 @@
        
 @stop
 
-@section('footer')
-                <div id="footer">
-                <p>&copy; Data Pegawai 2020</p>
-                </div>
-        @stop

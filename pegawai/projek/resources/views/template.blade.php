@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sistem Informasi Pegawai</title>
     
-    <link href="{{ asset('../public/bootstrap-3.3.6/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('../public/bootstrap-4.4.1-dist/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('../public/css/style.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -17,7 +17,7 @@
 
     @yield('footer')
     <script src="{{ asset('../public/js/jquery_2_2_1.min.js') }}"></script>
-    <script src="{{ asset('../public/bootsstrap_3_3_6/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('../public/bootstrap-4.4.1-dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('../public/js/pegawai.js') }}"></script>
      
     

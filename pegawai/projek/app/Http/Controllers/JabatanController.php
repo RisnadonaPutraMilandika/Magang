@@ -23,6 +23,7 @@ class JabatanController extends Controller
     {
         //jumlah data jabatan
         $jabatan_list = jabatan::all();
+        $jumlah_jabatan = Pegawai::count();
         $jabatan_1 = Pegawai::all()->wherein('id_jabatan', ['1']);
         $jumlah_jabatan_1 = $jabatan_1->count();
         $jabatan_2 = Pegawai::all()->wherein('id_jabatan', ['2']);
@@ -43,7 +44,7 @@ class JabatanController extends Controller
         $j5 = DB::table('jabatan')->where('id',5)->get();
         $nama_j5 = $j5[0]->nama_jabatan;
     
-        return view('jabatan/index', compact('nama_j1','nama_j2','nama_j3','nama_j5','j1','j2','j3','j5','jabatan_list','jabatan_1','jumlah_jabatan_1','jabatan_2','jumlah_jabatan_2','jabatan_3','jumlah_jabatan_3','jabatan_5','jumlah_jabatan_5'));
+        return view('jabatan/index', compact('jumlah_jabatan','nama_j1','nama_j2','nama_j3','nama_j5','j1','j2','j3','j5','jabatan_list','jabatan_1','jumlah_jabatan_1','jabatan_2','jumlah_jabatan_2','jabatan_3','jumlah_jabatan_3','jabatan_5','jumlah_jabatan_5'));
     }
     public function create()
     {

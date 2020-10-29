@@ -13,13 +13,17 @@
 	<p>Grafik Pegawai Laki-laki dan perempuan<p>
 	<div style="width: 750px;height: 750px">
 		<canvas id="myChart"></canvas>
+		<p> Laki-laki : {{ $jumlah_pegawai_laki }}</p>
+		<p> Perempuan : {{ $jumlah_pegawai_cewek }}</p>
+	<p> Total Pegawai : {{ $jumlah }}</p>
+		<div class="box-button">{{ link_to('jabatan', 'Detail Jumlah Pegawai Berdasarkan Jabatan', ['class' => 'btn btn-success btn-sm'])}}</div>
 	</div>
     </center>
  
 	<script>
 		var ctx = document.getElementById("myChart").getContext('2d');
 		var myChart = new Chart(ctx, {
-			type: 'bar',
+			type: 'pie',
 			data: {
 				labels: ["Laki-Laki", "Perempuan"],
 				datasets: [{
@@ -47,12 +51,8 @@
 			}
 		});
 	</script>
+
 </body>
 
 </html>
 @endsection
-@section('footer')
-                <div id="footer">
-                <p>&copy; Data Pegawai 2020</p>
-                </div>
-        @stop

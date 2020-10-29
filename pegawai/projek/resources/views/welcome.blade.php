@@ -1,95 +1,63 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>CRUD Data Pegawai</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: green;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-                color: white;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-                
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-              
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-                color: white;
-                
-            }
-
-            .links > a {
-                color: white;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/chart') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                    @endauth
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ asset('../public/bootstrap-4.4.1-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+<body >
+    <div class="container">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">CRUD Data Pegawai</h3>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                CRUD Data Pegawai
+                <form action="{{ route('login') }}" method="post">
+                @csrf
+                <div class="card-body">
+                    @if(session('errors'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            Something it's wrong:
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if (Session::has('success'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success') }}
+                        </div>
+                    @endif
+                    @if (Session::has('error'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('error') }}
+                        </div>
+                    @endif
+                    <div class="form-group">
+                        <label for=""><strong>Email</strong></label>
+                        <input type="text" name="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for=""><strong>Password</strong></label>
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
                 </div>
-
-                <div class="links">
-                    <a href="{{url('/chart')}}">HOME</a>
-                    <a href="{{url('/lihat_data_pegawai')}}">Pegawai</a>
-                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-info btn-block">Log In</button>
+                </form>
             </div>
+           
         </div>
-    </body>
+        <center>
+        <div class="box-button">{{ link_to('lihat_data_pegawai', 'Guest Mode', ['class' => 'btn btn-secondary btn-sm'])}}</div>
+    </div>
+    </center>
+</body>
 </html>

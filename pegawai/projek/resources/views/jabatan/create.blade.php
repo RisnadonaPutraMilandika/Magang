@@ -10,8 +10,4 @@
         </div>
     @stop
 
-    @section('footer')
-        <div id="footer">
-            <p>&copy; Data Pegawai 20200 </p>
-        </div>
-        @stop
+  

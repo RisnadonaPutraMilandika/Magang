@@ -2,12 +2,13 @@
 
 @section('main')
     <div id="jabatan">
+    <center>
     <h2>Jabatan</h2>
-    
+    </center>
     @include('_partial.flash_message')
 
     @if (count($jabatan_list) > 0)
-    <table class="table table-bordered">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>No</th>
@@ -56,11 +57,8 @@
     <div>{{ $nama_j2 }} = {{ $jumlah_jabatan_2 }} </div>
     <div>{{ $nama_j3 }} = {{ $jumlah_jabatan_3 }} </div>
     <div>{{ $nama_j5 }} = {{ $jumlah_jabatan_5 }} </div>
+    <div></div>
+    <div>Total Pegawai = {{ $jumlah_jabatan }}</div>
     </center>
 @stop
 
-@section('footer')
-    <div id="footer">
-        <p>&copy; Data Pegawai 2020 </p>
-    </div>
-@stop

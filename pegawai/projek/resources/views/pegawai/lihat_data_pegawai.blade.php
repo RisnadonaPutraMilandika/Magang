@@ -1,14 +1,16 @@
 @extends('template')
 
 @section('main')
+<center>
 <h2>List Pegawai</h2>
+</center>
 @include('_partial/flash_message')
 <div id="pegawai">
 
 @if (Auth::check())
         <div class="tombol-nav">
         <div>
-                <a href="{{ url('pegawai/create') }}" class="btn btn-primary ">Tambah</a>
+                <a href="{{ url('pegawai/create') }}" class="btn btn-info ">Tambah</a>
                 <a href="cetak_pdf" class="btn btn-danger" target="_blank">CETAK PDF</a>
                 <a href="export_excel" class="btn btn-success my-3" target="_blank">CETAK EXCEL</a>
         </div>
@@ -49,10 +51,10 @@
                 <td>
                 <div class="box-button">{{ link_to('pegawai/'.$pegawai->id, 'Detail', ['class' => 'btn btn-success btn-sm'])}}</div>
                 @if (Auth::check())
-                <div class="box-button">{{ link_to('pegawai/'.$pegawai->id.'/edit', 'Edit', ['class' => 'btn btn-info btn-sm'])}}</div>
+                <div class="box-button">{{ link_to('pegawai/'.$pegawai->id.'/edit', 'Edit', ['class' => 'btn btn-warning btn-sm'])}}</div>
                 <div class="box-button">        
                 {!! Form::open(['method' => 'DELETE', 'action' => ['PegawaiController@destroy', $pegawai->id]]) !!} 
-                {!! Form::submit('Delete', ['class' => 'btn btn-warning btn-sm']) !!} 
+                {!! Form::submit('Delete', ['class' => 'btn btn-secondary btn-sm']) !!} 
                 {!! Form::close() !!} 
                 </div>
                 @endif
@@ -78,8 +80,3 @@
        
         </div>
 @stop
-@section('footer')
-                <div id="footer">
-                <p>&copy; Data Pegawai 2020</p>
-                </div>
-        @stop

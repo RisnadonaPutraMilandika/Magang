@@ -52,8 +52,3 @@
 
 @stop
 
-@section('footer')
-    <div id="footer">
-        <p>&copy; Data Pegawai 2020 </p>
-    </div>
-@stop

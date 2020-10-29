@@ -255,4 +255,11 @@ public function export_excel()
     return Excel::download(new PegawaiExport, 'datapegawai.xlsx');
 }
 
+public function cetak_pdf_absensi()
+{
+    $pegawai_list = Pegawai::all();
+    $pdf = PDF::loadview('pegawai/absensi_pdf',['pegawai_list'=>$pegawai_list]);   
+    return $pdf->download('laporan-absensi.pdf'); 
+
+}
 }

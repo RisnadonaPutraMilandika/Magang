@@ -11,6 +11,10 @@
 |
 */
 Route::get('chart', 'ChartController@index');
+
+Route::get('absensi', 'AbsensiController@index');
+
+
 Route::get('gaji', 'GajiController@jumlah');
 Route::get('/', function () {
     return view('welcome');
@@ -91,6 +95,8 @@ Route::get('date_mutator', 'PegawaiController@date_mutator');
 Route::get('email', 'PegawaiController@email');
 
 Route::get('cetak_pdf', 'PegawaiController@cetak_pdf');
+
+Route::get('cetak_pdf_absensi', 'PegawaiController@cetak_pdf_absensi');
 
 Route::get('export_excel', 'PegawaiController@export_excel');
 
